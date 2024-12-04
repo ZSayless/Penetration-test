@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add these styles */
+html {
+  scroll-padding-top: 4rem; /* Adjust this value based on your navbar height */
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 4rem; /* Adjust this value based on your navbar height */
+}
