@@ -1,6 +1,8 @@
 'use client';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
@@ -28,27 +30,41 @@ const faqs = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const answerVariants = {
+    hidden: { 
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut"
+      }
+    },
+    visible: { 
+      opacity: 1,
+      height: "auto",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16">
-          Frequently Asked Questions
-        </h2>
-        <div className="space-y-4">
+        <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
             <div 
               key={index}
               className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-lg font-medium text-left flex items-center justify-between"
+                className="w-full px-6 py-4 text-lg font-medium text-center flex items-center justify-between"
               >
-                <span>{faq.question}</span>
+                <span className="flex-1">{faq.question}</span>
                 <svg 
-                  className={`w-5 h-5 text-blue-500 transform transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
+                  className="w-5 h-5 text-blue-500 transform transition-transform duration-200" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -56,11 +72,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div 
-                className={`px-6 overflow-hidden transition-all duration-200 ease-in-out ${
-                  openIndex === index ? 'max-h-96 pb-4' : 'max-h-0'
-                }`}
-              >
+              <div className="px-6 pb-4">
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             </div>

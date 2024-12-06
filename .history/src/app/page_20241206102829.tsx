@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Features />
       <Services />
       <Process />
       <WhyPentest />
       <Tools />
       <About />
+      <Features />
       <FAQ />
       <Testimonials />
       <Contact />
