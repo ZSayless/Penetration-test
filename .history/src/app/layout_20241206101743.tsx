@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SecureTest Pro | Enterprise Cybersecurity Solutions",
+  title: "SecureTest Pro - Professional Penetration Testing Services",
   description:
-    "Leading provider of advanced penetration testing and security assessment services. Protect your enterprise with our comprehensive cybersecurity solutions and expert vulnerability analysis.",
+    "Comprehensive security assessment services to protect your business from cyber threats.",
 };
 
 export default function RootLayout({

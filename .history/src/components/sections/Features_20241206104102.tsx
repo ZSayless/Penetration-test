@@ -25,17 +25,6 @@ export default function Features() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            Why Choose Our Services
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Industry-leading security testing with comprehensive solutions
-          </p>
-        </div>
-
-        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm sm:max-w-3xl lg:max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
